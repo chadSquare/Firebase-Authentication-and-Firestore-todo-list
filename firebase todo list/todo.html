@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FireList - todo list</title>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <nav class="orange">
+        <div class="nav-wrapper container">
+          <a
+            href="#"
+            data-target="slide-out"
+            class="sidenav-trigger hide-on-large"
+            ><i class="material-icons">menu</i></a
+          >
+          <a href="#!" class="brand-logo">FireList</a>
+
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a
+                href="#logout-modal"
+                id="logout-modal-btn"
+                class="modal-trigger"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- end of large nav -->
+
+    <!-- start of side nav -->
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <a href="#!">FireList</a>
+      </li>
+
+      <li>
+        <a class="waves-effect modal-trigger" href="#logout-modal">Logout</a>
+      </li>
+    </ul>
+    <!-- end of side nav -->
+
+    <!-- start of main content -->
+    <div class="main">
+      <div class="container center">
+        <h3>FireList</h3>
+      </div>
+      <div class="container center red-text not-verified">
+        <p>
+          Your account is not verified. Please respond to our verification
+          email.
+        </p>
+      </div>
+      <!-- start of add new todo items input and btn-->
+
+      <div class="row container section">
+        <div class="input-field col s9 l8 offset-m1 offset-l1">
+          <input id="input-text" type="text" class="validate" />
+          <label id="input-label" for="input-text">Enter a Todo note</label>
+        </div>
+        <div class="container section col s1 l1 offset-l1">
+          <div id="add-todo-btn" class="container section">
+            <a href="#" class="btn"><i class="material-icons">add_box</i></a>
+          </div>
+        </div>
+      </div>
+      <!-- end of add new todo items -->
+
+      <!-- start of todo list -->
+      <section class="container">
+        <ul class="collection with-header">
+          <li class="collection-header">
+            <h5 class="center">My Todo Items</h5>
+            <div class="row valign-wrapper">
+              <label class="col s10 m11">
+                <input id="select-all-checkbox" type="checkbox" />
+                <span>Select All Todo Items</span>
+              </label>
+              <!-- <div class="left">
+                <p>Checked item count: num</p>
+              </div> -->
+              <btn
+                id="delete-all-btn"
+                href="#!"
+                class="secondary-content yellow col s2 m1 btn delete-all-btn"
+                ><i class="material-icons">delete</i></btn
+              >
+            </div>
+          </li>
+        </ul>
+        <ul id="list" class="collection"></ul>
+        <!-- start of preloader -->
+        <aside id="preloader" class="container center-align">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-yellow-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!-- end of preloader -->
+      </section>
+      <!-- end of todo list -->
+    </div>
+    <!-- end of main content -->
+
+    <!-- start of modals-->
+
+    <!-- start of logout modal -->
+    <div id="logout-modal" class="modal">
+      <div class="modal-content">
+        <h4 class="center">Are you sure you want to logout?</h4>
+        <br />
+        <div class="row logout-row">
+          <a class="col s12 m4 offset-m1 btn red waves-effect close-modal"
+            >NO</a
+          >
+          <a
+            id="logout-btn"
+            class="col s12 m4 offset-m2 btn green waves-effect"
+          >
+            YES
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- start of logout modal -->
+
+    <!-- start of todo confirmation -->
+    <div id="confirmation" class="modal center">
+      <div class="modal-content">
+        <h4 id="confirmation-text"></h4>
+        <img id="confirmation-img" src="" alt="confirmation-img" />
+      </div>
+      <div class="section center">
+        <a href="#!" class="modal-close btn waves-effect waves-green"
+          >continue</a
+        >
+      </div>
+    </div>
+    <!-- end of todo confirmation -->
+
+    <!-- end of modals-->
+    <footer class="page-footer orange">
+      <div class="footer-copyright">
+        <div class="container center">
+          <p>Created by Chad Square &copy; 2020</p>
+        </div>
+      </div>
+    </footer>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCCKwm9Xs5X3YZRW-zuPAWuS_sXyxeg92s",
+        authDomain: "todo-list-aeb61.firebaseapp.com",
+        databaseURL: "https://todo-list-aeb61.firebaseio.com",
+        projectId: "todo-list-aeb61",
+        storageBucket: "todo-list-aeb61.appspot.com",
+        messagingSenderId: "294747823106",
+        appId: "1:294747823106:web:d994480283c9dd4d09db1b",
+        measurementId: "G-QYRNMDQLJX",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navbar-fixed">
+      <nav class="orange">
+        <div class="nav-wrapper container">
+          <a
+            href="#"
+            data-target="slide-out"
+            class="sidenav-trigger hide-on-large"
+            ><i class="material-icons">menu</i></a
+          >
+          <a href="#!" class="brand-logo">FireList</a>
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="#login-modal" id="login-modal-btn" class="modal-trigger"
+                >Login</a
+              >
+            </li>
+            <li>
+              <a
+                href="#sign-up-modal"
+                id="sign-up-modal-btn"
+                class="modal-trigger"
+                >Sign-up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- end of top nav -->
+    <div class="main">
+      <!-- start of side nav -->
+      <ul id="slide-out" class="sidenav">
+        <li>
+          <a class="waves-effect modal-trigger" href="#sign-up-modal"
+            >FireList</a
+          >
+        </li>
+
+        <li>
+          <a class="waves-effect modal-trigger" href="#login-modal">Login</a>
+        </li>
+        <li>
+          <a class="waves-effect modal-trigger" href="#sign-up-modal"
+            >Sign Up</a
+          >
+        </li>
+      </ul>
+      <!-- end of side nav -->
+
+      <section class="container center showcase">
+        <h1>
+          You'll Never Have to Remember a Single Thing
+        </h1>
+        <div>
+          <img src="images/notepad.png" />
+        </div>
+        <button
+          data-target="get-started"
+          class="btn yellow accent-2 blue-grey-text waves-effect modal-trigger"
+        >
+          <h6>Get Started</h6>
+        </button>
+      </section>
+
+      <!-- start of get started login Modal Structure -->
+      <div id="get-started" class="modal">
+        <div class="modal-content">
+          <h4 class="center">Welcome to FireList</h4>
+          <br />
+          <div class="container"></div>
+        </div>
+        <div class="modal-footer row">
+          <a
+            href="#login-modal"
+            class="modal-close modal-trigger waves-effect orange darken-1 btn-small col s12 m4 push-m1"
+            >Existing user</a
+          >
+          <a
+            href="#sign-up-modal"
+            class="modal-close modal-trigger waves-effect orange darken-1 btn-small col s12 m4 push-m3"
+            >new user</a
+          >
+        </div>
+      </div>
+      <!-- end of get started Structure -->
+
+      <!-- start of login Modal Structure -->
+      <div id="login-modal" class="modal">
+        <div class="modal-content">
+          <h4 class="center">Login</h4>
+          <br />
+          <div class="container">
+            <form id="login-form">
+              <!--  -->
+              <div class="input-field">
+                <input id="login-email" type="email" class="validate" />
+                <label for="login-email">Email</label>
+              </div>
+              <div class="input-field">
+                <input id="login-password" type="password" class="validate" />
+                <label for="login-password">Password</label>
+              </div>
+              <!-- start of preloader -->
+              <aside
+                id="login-preloader"
+                class="container center-align preloaders"
+              >
+                <div class="preloader-wrapper big active">
+                  <div class="spinner-layer spinner-yellow-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+              <aside>
+                <p id="login-error-text" class="center red-text"></p>
+              </aside>
+              <!-- end of preloader -->
+              <div class="modal-footer">
+                <a
+                  href=""
+                  id="login-btn"
+                  class="waves-effect orange darken-1 btn-small right"
+                  >submit-login</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end of login Modal Structure -->
+
+      <!-- start of sign-up Modal Structure -->
+      <div id="sign-up-modal" class="modal">
+        <div class="modal-content">
+          <h4 class="center">Sign Up</h4>
+          <br />
+          <div class="container">
+            <form>
+              <div class="input-field">
+                <input id="sign-up-name" type="text" class="validate" />
+                <label for="sign-up-name">First Name</label>
+              </div>
+              <!--  -->
+              <div class="input-field">
+                <input id="sign-up-email" type="email" class="validate" />
+                <label for="sign-up-email">Email</label>
+              </div>
+              <div class="input-field">
+                <input id="sign-up-password" type="password" class="validate" />
+                <label for="sign-up-password">Password</label>
+              </div>
+              <!-- start of preloader -->
+              <aside
+                id="signup-preloader"
+                class="container center-align preloaders"
+              >
+                <div class="preloader-wrapper big active">
+                  <div class="spinner-layer spinner-yellow-only">
+                    <div class="circle-clipper left">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                      <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                      <div class="circle"></div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+              <aside>
+                <p id="signup-error-text" class="center red-text"></p>
+              </aside>
+              <!-- end of preloader -->
+              <div class="modal-footer">
+                <a
+                  href=""
+                  id="sign-up-btn"
+                  class="waves-effect orange darken-1 btn-small right"
+                  >Sign me up</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end of sign-up Modal Structure -->
+    </div>
+
+    <footer class="page-footer orange">
+      <div class="footer-copyright">
+        <div class="container center">
+          <p>Created by Chad Square &copy; 2020</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCCKwm9Xs5X3YZRW-zuPAWuS_sXyxeg92s",
+        authDomain: "todo-list-aeb61.firebaseapp.com",
+        databaseURL: "https://todo-list-aeb61.firebaseio.com",
+        projectId: "todo-list-aeb61",
+        storageBucket: "todo-list-aeb61.appspot.com",
+        messagingSenderId: "294747823106",
+        appId: "1:294747823106:web:d994480283c9dd4d09db1b",
+        measurementId: "G-QYRNMDQLJX",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

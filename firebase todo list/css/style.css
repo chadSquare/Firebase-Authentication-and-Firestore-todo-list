@@ -1,0 +1,102 @@
+/* make the todo screen always fit the full screen height */
+.main {
+  min-height: calc(100vh - 64px - 80px);
+}
+
+/* START OF HOME PAGE STYLES */
+
+/* make the showcase font larger */
+.showcase h1 {
+  font-size: 9vw;
+  font-weight: bold;
+}
+
+.showcase img {
+  transform: skew(-20deg);
+  height: 50vh;
+  width: 60vw;
+}
+
+/* move btn higher up */
+.showcase .btn {
+  bottom: 16em;
+}
+
+.preloaders,
+#login-error-text,
+#signup-error-text {
+  display: none;
+}
+
+/* START OF HOME PAGE STYLES */
+
+/* end of side nav */
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* width: 100%; */
+}
+
+.sidenav li {
+  margin-bottom: 6em;
+  width: 100%;
+  text-align: center;
+}
+
+.sidenav li a {
+  font-size: 5vw;
+}
+
+.sidenav li:first-child {
+  padding: 3em;
+  /* height: 20%; */
+  /* width: 100%; */
+  background-color: orange;
+}
+/* end of side nav */
+
+.not-verified {
+  display: none;
+}
+
+/* start of  modals styling */
+.modal img {
+  height: 30%;
+  width: 30%;
+}
+/* end of  modals styling */
+
+@media screen and (max-width: 480px) {
+  /* create space between buttons confirm logout buttons */
+  .logout-row .col {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sidenav li a {
+    font-size: 2vw;
+  }
+}
+
+/* large screen styles */
+@media screen and (min-width: 960px) {
+  .showcase h1 {
+    font-size: 4vw;
+  }
+  .showcase img {
+    transform: skew(-20deg);
+    height: 60vh;
+    width: 40vw;
+    position: relative;
+    left: 1em;
+  }
+
+  /* move btn to the left */
+  .showcase .btn {
+    right: 1em;
+    bottom: 21.5em;
+  }
+}
